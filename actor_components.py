@@ -56,26 +56,3 @@ class AskActor(Component):
     def execute(self, ctx) -> None:
         system = ctx['actor_system']
         self.response.value = system.ask(self.actor_ref.value, self.message.value, self.wait_time.value)
-
-
-
-@xai_component
-class SetDictValue(Component):
-    obj: InArg[dict]
-    name: InCompArg[str]
-    value: InCompArg[any]
-    out_dict: OutArg[dict]
-    
-    def execute(self, ctx) -> None:
-        obj = self.obj.value if self.obj.value else {}
-        obj[self.name.value] = self.value.value
-        self.out_dict.value = obj
-
-@xai_component
-class GetDictValue(Component):
-    obj: InCompArg[dict]
-    name: InCompArg[str]
-    value: OutArg[any]
-    
-    def execute(self, ctx) -> None:
-        self.value.value = self.obj.value[self.name.value]
