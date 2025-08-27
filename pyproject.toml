@@ -1,0 +1,17 @@
+[project]
+name = "xai-actors"
+version = "0.1.0"
+description = "A Xircuits component library that wraps Thespian, the framework of an Actor model for use by applications implementing Actors."
+authors = [{ name = "XpressAI", email = "eduardo@xpress.ai" }]
+license = "Apache-2.0"
+readme = "readme.md"
+repository = "https://github.com/XpressAI/xai-actors"
+keywords = ["xircuits", "thespian", "actor"]
+
+dependencies = [
+    "thespian==3.10.7"
+]
+
+# Xircuits-specific configurations
+[tool.xircuits]
+requirements_path = "requirements.txt"
